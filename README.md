@@ -1,0 +1,2 @@
+# velocity_stateless_nonpersistant_auth_via_custom_http_semantics
+Ongoing implementation and integration of http based stateless non persistant auth for VELOCITY
