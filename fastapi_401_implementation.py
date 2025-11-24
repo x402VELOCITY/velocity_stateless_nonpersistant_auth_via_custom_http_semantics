@@ -344,7 +344,7 @@ class VelcoityTuned401(BaseHTTPMiddleware):
                                     geocoding_data=GEOCODER(coords)
                                     if geocoding_data["data"] is None:
                                            return JSONResponse(
-                                               content={"status": "error", "message": geocoding_data["message"]},
+                                               content={"status": "locationerror", "message": geocoding_data["message"]},
                                                headers= {
                                                    "Access-Control-Allow-Origin": "*",
                                                   "Access-Control-Allow-Credentials": "true"
@@ -353,7 +353,7 @@ class VelcoityTuned401(BaseHTTPMiddleware):
                                     elif geocoding_data["data"]["code"] in self.geo_closure_locs:
                                                 
                                            return JSONResponse(
-                                               content={"status": "error", "message": geocoding_data["message"]},
+                                               content={"status": "locationdeny", "message": geocoding_data["message"]},
                                                headers= {
                                                    "Access-Control-Allow-Origin": "*",
                                                   "Access-Control-Allow-Credentials": "true"
